@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: cogfleet
+  profiles:
+    active:
+    - dev
+  config:
+    import: "optional:consul:localhost:8500"
+  cloud:
+    consul:
+      config:
+        enabled: true
+        format: YAML
+        data-key: properties
+
+
+logging:
+  level:
+    org.springframework.cloud.consul: DEBUG
